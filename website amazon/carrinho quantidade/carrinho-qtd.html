@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantidade carrinho</title>
+</head>
+<body>
+  <button onclick=" console.log(`Quantidade no carro: ${qtdCarrinho} `)" >Mostrar Quantidade</button>
+
+  <button onclick="
+    qtdCarrinho = qtdCarrinho + 1;
+    console.log(`Quantidade no carro: ${qtdCarrinho} `)
+  " >Adicionar no Carrinho</button>
+
+  <button onclick=" qtdCarrinho = qtdCarrinho +2; console.log(`Quantidade no carro: ${qtdCarrinho} `) " >+2</button>
+
+  <button onclick=" qtdCarrinho = qtdCarrinho +3; console.log(`Quantidade no carro: ${qtdCarrinho} `)" >+3</button>
+
+  <button onclick="qtdCarrinho = 0;
+    console.log('O carrinho foi redefinido');
+    console.log(`Quantidade no carro: ${qtdCarrinho} `);
+  " >Redefinir Carrinho</button>
+
+  <script>
+    let qtdCarrinho = 0;
+  </script>
+</body>
+</html>
