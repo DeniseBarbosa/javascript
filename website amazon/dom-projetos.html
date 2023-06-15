@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Projetos</title>
+  </head>
+  <body>
+    <p>YouTube botão de inscrição</p>
+    <button onclick=" subIncricao(); " class="js-botao-inscricao">
+      Inscrever-se
+    </button>
+    <p>Loja Amazon Calculadora</p>
+    <input
+      placeholder="Custo do frete"
+      class="js-custo-input"
+      onkeydown=" lidarCustoChaveBaixo(event); "
+    />
+    <button onclick=" calcularTotal();">Calcular</button>
+    <p class="js-total-custo"></p>
+
+    <script>
+      function lidarCustoChaveBaixo(event) {
+        if (event.key === "Enter") {
+          calcularTotal();
+        }
+      }
+
+      function calcularTotal() {
+        const inputElemento = document.querySelector(".js-custo-input");
+        let custo = Number(inputElemento.value);
+
+        if (custo < 40) {
+          custo = custo + 10;
+        }
+
+        document.querySelector(".js-total-custo").innerHTML = `R$${custo}`;
+      }
+
+      function subIncricao() {
+        const botaoElemento = document.querySelector(".js-botao-inscricao");
+        // o motivo de usar innerText é que ele vai selecionar apenas o texto e ignorar os espaços
+        if (botaoElemento.innerText === "Inscrever-se") {
+          botaoElemento.innerHTML = "Incrição confirmada";
+        } else {
+          botaoElemento.innerHTML = "Inscrever-se";
+        }
+      }
+    </script>
+  </body>
+</html>
