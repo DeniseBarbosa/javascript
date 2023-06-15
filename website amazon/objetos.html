@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objetos</title>
+  </head>
+  <body>
+    <script>
+      const produtos = {
+        nome: "meias",
+        preco: 1090,
+      };
+      console.log(produtos);
+      console.log(produtos.nome);
+      produtos.nome = "meias de algodão";
+      console.log(produtos);
+      produtos.novaPropriedade = "id";
+      console.log(produtos);
+      delete produtos.novaPropriedade;
+      console.log(produtos);
+
+      const produtos1 = {
+        nome: "camisa",
+        "delivery-comida": "pizza",
+        avaliacao: {
+          estrelas: 4.5,
+          contar: 87,
+        },
+        funcao: function metodo() {
+          console.log("Uma função dentro de um objeto");
+        },
+      };
+      console.log(produtos1["nome"]);
+      console.log(produtos1["delivery-comida"]);
+      console.log(produtos1.avaliacao.estrelas);
+      produtos1.funcao();
+      // converter um objeto javascript em JSON
+      console.log(JSON.stringify(produtos1));
+    </script>
+  </body>
+</html>
